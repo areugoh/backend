@@ -10,6 +10,7 @@ Environment variables:
 - `DEBUG`: if `true` the API will print debug messages
 - `INFOIP_TOKEN`: token for the [ipinfo.io](https://ipinfo.io/) API
 - `KBGEO_TOKEN`: token for the [kbgeo.com](https://www.kbgeo.com/) API
+- `KBGEO_URL`: url for the [kbgeo.com](https://www.kbgeo.com/) API
 
 ## Endpoints
 
