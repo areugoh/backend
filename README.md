@@ -92,9 +92,3 @@ Returns:
 - a picture of the animal/plant
 - the water quality that the animal/plant needs to survive
 - human danger level
-    
-
-
-    Address: ftp.ptree.jaxa.jp
-UID: laket79103_fesgrid.com
-PW: SP+wari8

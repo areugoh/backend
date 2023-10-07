@@ -12,8 +12,13 @@ import (
 type Condition string
 
 const (
-	ConditionGood Condition = "good"
-	ConditionBad  Condition = "bad"
+	ConditionGood         Condition = "good"
+	ConditionModerate     Condition = "moderate"
+	ConditionContaminated Condition = "contaminated"
+	ConditionUnknown      Condition = "unknown"
+	ConditionRadiation    Condition = "radiation"
+	ConditionDanger       Condition = "danger"
+	ConditionProtected    Condition = "protected"
 )
 
 type AquaticLocation struct {
@@ -36,8 +41,8 @@ func getArea(c *gin.Context) {
 		Location: location,
 		NearestAquaticLocation: AquaticLocation{
 			Name:        name,
-			Condition:   ConditionGood,
-			Temperature: 17.8,
+			Condition:   getAvgCondition(location),
+			Temperature: getAvgTemperature(location),
 			Distance:    distance,
 		},
 	})
@@ -45,7 +50,7 @@ func getArea(c *gin.Context) {
 
 func getClosestSea(location Location) (string, float64) {
 	if os.Getenv("MOCK") == "true" {
-		return "", 1.340 * 1.609
+		return "Tokyo Bay", 1.340 * 1.609
 	}
 
 	// API call to get {"distanceInMiles": 0} from KBGEO_URL with query parameters: lat=location.Latitude and lng=location.Longitude with header: "kb-auth-token": KBGEO_TOKEN
@@ -72,10 +77,20 @@ func getClosestSea(location Location) (string, float64) {
 	return "", response.DistanceInMiles * 1.609
 }
 
-func getAvgCondition(location Location) float64 {
-	return 0
+func getAvgCondition(location Location) Condition {
+	if os.Getenv("MOCK") == "true" {
+		return ConditionModerate
+	}
+
+	//TODO: choose the condition with the highest count
+	return ConditionUnknown
 }
 
 func getAvgTemperature(location Location) float64 {
+	if os.Getenv("MOCK") == "true" {
+		return 17.8
+	}
+
+	//TODO: API call to get the temperature
 	return 0
 }
