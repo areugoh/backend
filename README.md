@@ -1,5 +1,10 @@
 # Backend
 
+## Data sources
+
+- [ipinfo.io](https://ipinfo.io/): IP geolocation API to avoid asking the user for permission to access the location
+- [kbgeo.com](https://www.kbgeo.com/): API to get the nearest sea/ocean from the given coordinates
+
 ## Setup
 
 ### Requirements
@@ -44,13 +49,27 @@ Response example:
         "name": "Yokohama"
     },
     "nearest_aquatic_location": {
-        "name": "Baltic Sea",
+        "name": "Tokyo Bay",
         "condition": "good",
         "temperature": 17.8,
         "distance": 14.97
     }
 }
 ```
+
+| Condition | Description |
+| --- | --- |
+| good | The water quality is good |
+| moderate | The water quality is moderate |
+| contaminated | The water quality is contaminated |
+| unknown | The water quality is unknown |
+| radiation | The water quality is contaminated with radiation |
+| danger | There are indigenous fauna or flora living in the proximities dangerous for humans |
+| protected | There are indigenous fauna or flora living in the proximities protected by law |
+
+- `temperature` is in Celsius degrees
+- `distance` is in km
+- `name` is the name of the closest sea/ocean, only available if `distance` is less than 100km
 
 ### GET /api/v1/graph
 
@@ -73,3 +92,9 @@ Returns:
 - a picture of the animal/plant
 - the water quality that the animal/plant needs to survive
 - human danger level
+    
+
+
+    Address: ftp.ptree.jaxa.jp
+UID: laket79103_fesgrid.com
+PW: SP+wari8
