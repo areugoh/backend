@@ -32,8 +32,8 @@ func getLocationByIP(ip string) Location {
 
 	if mock == "true" {
 		return Location{
-			Longitude: 35.4729335,
-			Latitude:  139.6146366,
+			Latitude:  35.4729335,
+			Longitude: 139.6146366,
 			Name:      "Yokohama",
 			IP:        ip,
 		}
@@ -43,8 +43,8 @@ func getLocationByIP(ip string) Location {
 	info, _ := client.GetIPInfo(net.ParseIP(ip))
 
 	longLat := strings.Split(info.Location, ",")
-	lon, _ := strconv.ParseFloat(longLat[0], 64)
-	lat, _ := strconv.ParseFloat(longLat[1], 64)
+	lat, _ := strconv.ParseFloat(longLat[0], 64)
+	lon, _ := strconv.ParseFloat(longLat[1], 64)
 
 	return Location{
 		Longitude: lon,
