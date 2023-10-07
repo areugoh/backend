@@ -35,3 +35,5 @@ server
 
 # Vendor
 vendor/
+.envrc
+gin-bin
