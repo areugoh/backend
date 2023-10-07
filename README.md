@@ -22,6 +22,24 @@ Returns:
 
 For the given coordinates.
 
+Response example:
+
+```json
+{
+    "location": {
+        "longitude": 35.4729335,
+        "latitude": 139.6146366,
+        "name": "Yokohama"
+    },
+    "nearest_aquatic_location": {
+        "name": "Baltic Sea",
+        "condition": "good",
+        "temperature": 17.8,
+        "distance": 14.97
+    }
+}
+```
+
 ### GET /api/v1/graph
 
 Returns:
@@ -36,7 +54,7 @@ Returns:
 
 For the given coordinates.
 
-### GET /api/v2/animal/:name
+### GET /api/v2/animal/:name [WIP for V2]
 
 Returns:
 - a description about the animal/plant
