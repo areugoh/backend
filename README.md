@@ -1,5 +1,16 @@
 # Backend
 
+## Setup
+
+### Requirements
+
+Environment variables:
+
+- `MOCK`: if `true` the API will return mock data (the ML model generates real data, only INFOIP and KBGEO are mocked due to the API limits on the free plan)
+- `DEBUG`: if `true` the API will print debug messages
+- `INFOIP_TOKEN`: token for the [ipinfo.io](https://ipinfo.io/) API
+- `KBGEO_TOKEN`: token for the [kbgeo.com](https://www.kbgeo.com/) API
+
 ## Endpoints
 
 The location will be returned as a JSON object except `/api/v2/animal/:name` with the following structure:
