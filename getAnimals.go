@@ -32,9 +32,9 @@ func getAnimalList(location Location) []Animal {
 	if os.Getenv("MOCK") == "true" {
 		return []Animal{
 			{
-				Name:        "Dugong",
-				InDanger:    true,
-				Description: "The Dugong is a large marine mammal found in the waters near Yokohama. It is classified as endangered due to habitat destruction, pollution, and accidental entanglement in fishing nets. Human activities such as dredging, coastal development, and overfishing have led to the decline of their seagrass feeding grounds and disrupted their migration patterns.",
+				Name:        "Japanese spiny lobster",
+				InDanger:    false,
+				Description: "The Japanese spiny lobster is a species of lobster found in the waters around Yokohama. It is not considered to be in danger. However, overfishing and habitat destruction can pose a threat to their population.",
 			},
 			{
 				Name:        "Japanese Devil Ray",
