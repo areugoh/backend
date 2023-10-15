@@ -1,9 +1,12 @@
 # Backend
 
-As a weather forecast app try to predict the water quality of the surrounding water based on the weather conditions.
+As a weather forecast app try to predict the water quality of the surrounding.
+
 Our water quality app aims to help people to decide if it is safe to swim in the sea or ocean, if indigenous fauna or flora are in danger or if the water is contaminated with radiation.
+
 If fauna or flora are in danger, the app will recommend to avoid the area or to be careful with the animals and plants living in the water giving information about them and how your day to day actions can affect them.
-Our prediction is based on a ML model gathering data from JAXA (Japan Aerospace Exploration Agency), open source datasets about water quality and weather conditions combined with our algorithm to predict the estimate what we call "water score".
+
+Our prediction is based on a ML model gathering data from JAXA (Japan Aerospace Exploration Agency), open source datasets about water quality and weather conditions combined with our custom algorithm to generate what we call "water score" or "condition".
 
 ## Data sources
 
